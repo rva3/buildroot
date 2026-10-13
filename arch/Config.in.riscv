@@ -20,6 +20,15 @@ config BR2_riscv_custom
 
 endchoice
 
+config BR2_RISCV_SOFT_FLOAT
+	bool "Use soft-float"
+	select BR2_SOFT_FLOAT
+	help
+	  If your target CPU does not have a Floating Point Unit (FPU)
+	  or a kernel FPU emulator, but you still wish to support
+	  floating point functions, then everything will need to be
+	  compiled with soft floating point support (-msoft-float).
+
 comment "Instruction Set Extensions"
 
 config BR2_RISCV_ISA_RVI
